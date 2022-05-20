@@ -13,6 +13,13 @@
 
             //3.
             Console.WriteLine($"3. feladat: {nagydíjak.Count}");
+
+            //4.
+            nagydíjak
+                .Where(x => x.Név == "Hungarian Grand Prix" && x.Pozíció > 0)
+                //.Where(x => x.Név == "Hungarian Grand Prix" && x.Státusz == "Finished")
+                .ToList()
+                .ForEach(x => Console.WriteLine($"\t{x.Dátum.ToString("yyyy. MM. dd.")}:{x.Pozíció}. hely"));
         }
     }
 }
